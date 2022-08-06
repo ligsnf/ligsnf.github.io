@@ -12,6 +12,10 @@ body {
     margin: 40px auto 10px;
 }
 
+.fa.fa-map-marker {
+    margin-right: 10px;
+}
+
 h1 {
     margin: 0;
     font-weight: 400;
@@ -19,6 +23,10 @@ h1 {
 }
 
 h2 {
+    font-weight: 300;
+}
+
+.au {
     font-weight: 300;
     font-size: 1.2em;
 }
