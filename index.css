@@ -12,10 +12,6 @@ body {
     margin: 40px auto 10px;
 }
 
-.fa-solid.fa-location-dot {
-    margin-right: 5px;
-}
-
 h1 {
     margin: 0;
     font-weight: 400;
@@ -26,14 +22,30 @@ h2 {
     font-weight: 300;
 }
 
-.au {
+h3 {
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.degree, .uni-link {
+    color: white;
+}
+.degree:hover, .degree:active, .uni-link:hover, .uni-link:active {
+    text-decoration: none;
+}
+
+.university {
+    color: white;
     font-weight: 300;
     font-size: 1.2em;
 }
 
-h3 {
-    font-weight: 400;
-    font-size: 1.2em;
+.fa-solid.fa-location-dot {
+    margin-right: 5px;
+}
+
+.fa-solid.fa-graduation-cap {
+    margin-right: 8px;
 }
 
 a {
