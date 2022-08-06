@@ -43,6 +43,7 @@ h2 img {
 a {
     color: #61b0ff;
     text-decoration: none;
+    margin-left: 3px;
 }
 
 a:hover, a:active {
