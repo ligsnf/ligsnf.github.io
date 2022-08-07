@@ -29,6 +29,7 @@ h3 {
 
 .degree, .uni-link {
     color: white;
+    font-size: 0.9em;
 }
 .degree:hover, .degree:active, .uni-link:hover, .uni-link:active {
     text-decoration: none;
