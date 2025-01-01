@@ -1,14 +1,16 @@
 import Link from '@/components/Link'
+import { techStackLinks } from '@/data/projectsData'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 
 interface ListItem {
-  date: string
   title: string
   href?: string
   slug?: string
   description?: string
   tags?: string[]
+  imgSrc?: string
+  date?: string
 }
 
 interface ListLayoutCompactProps {
@@ -39,12 +41,32 @@ export default function ListLayoutCompact({
             <li key={title} className="py-4">
               <article>
                 <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                  <dl>
-                    <dt className="sr-only">Published on</dt>
-                    <dd className="text-sm font-medium leading-6 text-gray-500 dark:text-gray-400 sm:text-base">
-                      <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                    </dd>
-                  </dl>
+                  {item.date ? (
+                    <dl>
+                      <dt className="sr-only">Published on</dt>
+                      <dd className="text-sm font-medium leading-6 text-gray-500 dark:text-gray-400 sm:text-base">
+                        <time dateTime={item.date}>
+                          {formatDate(item.date, siteMetadata.locale)}
+                        </time>
+                      </dd>
+                    </dl>
+                  ) : (
+                    item.tags && (
+                      <div className="flex flex-wrap gap-2">
+                        {item.tags.map((tag) => (
+                          <Link
+                            key={tag}
+                            href={techStackLinks[tag]}
+                            className="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {tag}
+                          </Link>
+                        ))}
+                      </div>
+                    )
+                  )}
                   <div className="space-y-5 xl:col-span-3">
                     <div className="space-y-2">
                       <Link href={href}>
